@@ -38,7 +38,7 @@ class Dependencia {
 	
 	method capacidadFaltante(){
 		const capacidades = {rodado => rodado.capacidad()}
-		return self.cantEmpleados() - flota.sum(capacidades)
+		return (self.cantEmpleados() - flota.sum(capacidades)).max(0)
 	}
 	
 	method esGrande(){

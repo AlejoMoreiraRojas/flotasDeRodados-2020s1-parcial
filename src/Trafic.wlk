@@ -1,4 +1,11 @@
 object trafic {
+	var interior
+	var motor
+	
+	method configurar(unInterior, unMotor){
+		interior = unInterior
+		motor = unMotor
+	}
 	
 	method capacidad(){
 		return interior.capacidad()
@@ -18,43 +25,46 @@ object trafic {
 }
 
 
-object interior {
-	var esComodo = true
+object interiorComodo {
 	
-	method interiorComodo(){
-		esComodo = true
-	}
-	
-	method interiorPopular(){
-		esComodo = false
-	}
-		
 	method capacidad(){
-		return if(esComodo){5} else{12}
+		return 5
 	}
 	
 	method peso(){
-		return if(esComodo){700} else{1000}
+		return 700
 	}
 }
 
+object interiorPopular {
 
-object motor {
-	var esPulenta = true
-	
-	method motorPulenta(){
-		esPulenta = true
-	}
-	
-	method motorBataton(){
-		esPulenta = false
-	}
-	
-	method velMaxima(){
-		return if(esPulenta){130} else{80}
+	method capacidad(){
+		return 12
 	}
 	
 	method peso(){
-		return if(esPulenta){800} else{500}
+		return 1000
+	}
+}
+
+object motorPulenta {
+	
+	method velMaxima(){
+		return 130
+	}
+	
+	method peso(){
+		return 800
+	}
+}
+
+object motorBataton {
+	
+	method velMaxima(){
+		return 80
+	}
+	
+	method peso(){
+		return 500
 	}
 }

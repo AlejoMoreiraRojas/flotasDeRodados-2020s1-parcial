@@ -31,9 +31,7 @@ describe "TestDependencia" {
 		
 		kwidCultu3.sacarTanque()
 		
-		
-		interior.interiorPopular()
-		motor.motorBataton()
+		trafic.configurar(interiorPopular, motorBataton)
 		
 		deportes.agregarAFlota(cachito)
 		deportes.agregarAFlota(corsaAzul)
